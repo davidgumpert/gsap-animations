@@ -63,6 +63,7 @@ export default {
       h1,
       button {
         transform: translateY(-50px);
+        text-align: center;
       }
     }
     height: 100%;

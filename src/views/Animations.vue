@@ -4,7 +4,9 @@
       Here is a collection of all the animations.
     </div>
     <animation-first></animation-first>
+    <div class="divide"></div>
     <animation-second></animation-second>
+    <div class="divide"></div>
   </div>
 </template>
 
@@ -23,5 +25,12 @@ export default {
 .explanation-text {
   padding-bottom: 30px;
   text-align: center;
+}
+
+.divide {
+  content: "";
+  border-top: lightblue 1px dashed;
+  width: 80vw;
+  margin: 2rem auto;
 }
 </style>

@@ -20,6 +20,8 @@ export default {
     return {
       boxRight: false,
       buttonText: "Roll right",
+      box: null,
+      boxTimeline: null,
     };
   },
   computed: {
@@ -30,25 +32,33 @@ export default {
       return null;
     },
   },
+  mounted() {
+    this.box = this.$refs.box;
+    this.boxTimeline = new TimelineLite();
+  },
   methods: {
     animationStart() {
-      let { box } = this.$refs;
-      let timeline = new TimelineLite();
-      let dist = "";
+      let x = "";
+      let rotation;
+      let color;
       if (this.boxRight) {
         this.buttonText = "Roll right";
-        dist = "-85vw";
+        x = "0";
+        rotation = -90;
+        color = "red";
       } else {
-        dist = "85vw";
+        x = "85vw";
+        rotation = 90;
+        color = "green";
         this.buttonText = "Roll left";
       }
-      timeline.to(box, 3, {
-        x: dist,
-        rotation: 90,
+      this.boxTimeline.to(this.box, 3, {
+        x: x,
+        rotation: rotation,
         ease: Back.easeInOut,
       });
-      timeline.to(box, 1.5, { background: "green" }, "-=2");
-      this.boxRight != this.boxRight;
+      this.boxTimeline.to(this.box, 1.5, { background: color }, "-=2");
+      this.boxRight = !this.boxRight;
     },
   },
 };

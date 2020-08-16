@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <div class="row justify-content-center">
+      <img alt="Vue logo" src="../assets/logo.png" />
+    </div>
     <div class="home-text">
       This is a page to scroll through different type of animations. Smaller,
       simpler once and hopefully in the future more and more advance stuff! Have
@@ -16,10 +18,12 @@ export default {
 };
 </script>
 <style lang="scss">
-.home-text {
-  padding: 40px 0;
-  margin: auto;
-  max-width: 500px;
-  text-align: justify;
+.home {
+  .home-text {
+    padding: 40px 0;
+    margin: auto;
+    max-width: 500px;
+    text-align: justify;
+  }
 }
 </style>
